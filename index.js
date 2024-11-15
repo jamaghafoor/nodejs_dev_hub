@@ -4,7 +4,7 @@ const contact_routes = require("./routes/ContactRoutes");
 const user_routes = require("./routes/UserRoutes");
 const errorHandler = require("./middlewares/ErrorHandler");
 const dbConnect = require("./configs/DBConnection");
-const injectSpeedInsights = require("@vercel/speed-insights");
+const { injectSpeedInsights } = require("@vercel/speed-insights");
 
 let cors = require("cors");
 dbConnect();

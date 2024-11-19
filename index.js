@@ -1,15 +1,15 @@
+let cors = require("cors");
 const express = require("express");
-const dotenv = require("dotenv").config();
+const dbConnect = require("./configs/DBConnection");
+const errorHandler = require("./middlewares/ErrorHandler");
 const contact_routes = require("./routes/ContactRoutes");
 const user_routes = require("./routes/UserRoutes");
-const errorHandler = require("./middlewares/ErrorHandler");
-const dbConnect = require("./configs/DBConnection");
-
-let cors = require("cors");
-dbConnect();
+const dotenv = require("dotenv").config();
 
 const app = express();
 const port = process.env.PORT || 5000;
+
+dbConnect();
 
 app.use(express.json());
 app.use(cors());
